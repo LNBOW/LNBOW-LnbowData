@@ -1,0 +1,21 @@
+{
+  "auth":true,
+  "data":[
+    {
+      "userdata":{
+        "head":"/static/img/3.jpg",
+        "username":"alex123",
+        "sex":"女",
+        "address":"河科院",
+        "password":"123456"
+      },
+      "news":{
+        "post":0,
+        "follow":10,
+        "fans":12
+      }
+    }
+  ],
+  "time":10000,
+  "startTime":0
+}
