@@ -1,0 +1,297 @@
+.header_list .all_goods {
+	height: 20px;
+	overflow: hidden;
+}
+.li_nav{
+	overflow: hidden;
+	text-align: left;
+	height: 60px;
+	line-height: 60px;
+}
+.li_nav li{
+	display: inline-block;
+	padding-right: 10px;
+}
+.li_nav li a{
+	margin-right: 10px;
+}
+.detail_content{
+	overflow: hidden;
+}
+.detail_l{
+	float: left;
+	width: 175px;
+	margin-right: 15px;
+}
+.detail_l h1{
+	color: #f00;
+	font: 16px/1 "微软雅黑";
+	margin-bottom: 10px;
+	width: 175px;
+	text-align: left;
+	margin: 15px 0;
+}
+.detail_hot{
+	padding: 0 8px;
+	text-align: left;
+}
+.detail_hot li{
+	float: left;
+}
+.detail_hot li a{
+	display: block;
+	padding-left: 20px;
+	width: 155px;
+	height: 26px;
+	line-height: 26px;
+}
+.detail_new_goods{
+	display: block;
+}
+.detail_new_goods img{
+	width: 175px;
+}
+.detail_list{
+	border: 1px #ddd solid;
+	padding: 5px 0 15px;
+	overflow: hidden;
+}
+.detail_list dl{
+	border-bottom: 1px #ddd dashed;
+	margin-bottom: 10px;
+}
+.detail_list dt{
+	width: 158px;
+	margin: 0 auto 6px;
+}
+.detail_list dt a{
+	display: block;
+}
+.detail_list dt a img{
+	width: 158px;
+	height: 158px;
+}
+.detail_list dd{
+	white-space: nowrap;
+	overflow: hidden;
+	width: 150px;
+	margin: 0 auto;
+}
+.detail_list dd p{
+	height: 40px;
+	line-height: 40px;
+}
+
+
+.detail_r{
+	float: left;
+	width: 1000px;
+}
+.detail_r .glass{
+	position: relative;
+	width: 480px;
+	height: 580px;
+	margin: 20px;
+	border: 1px #ddd solid;
+}
+.small_img{
+	margin: 0;
+	width: 480px;
+	height: 480px;
+	display: block;
+}
+.small_img img{
+	display: block;
+	width: 480px;
+	height: 480px;
+}
+.small_img span{
+	width: 200px;
+	height: 200px;
+	background: #eee;
+	opacity: .6;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.big_img{
+	width: 480px;
+	height: 480px;
+	position: absolute;
+	left: 490px;
+	top:0;
+	overflow: hidden;
+	display: none;
+}
+.big_img img{
+	width: 800px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.img_list{
+	display: block;
+	padding: 5px 20px;
+	border-bottom: 1px #ddd dashed;
+	overflow: hidden;
+}
+.img_list img{
+	box-sizing: border-box;
+	float: left;
+	width: 70px;
+	height: 70px;
+	margin: 5px;
+	cursor: pointer;
+}
+.img_list img.active{
+	border: 5px #fc3 solid;
+}
+
+.detail_news{
+	border: 1px #ddd solid;
+	float: right;
+	width: 453px;
+	margin: 20px 0 20px 3px;
+	padding: 5px 20px;
+	text-align: left;
+	height: 570px;
+} 
+
+.detail_news .detail_news_top{
+	border-bottom: 1px #ddd solid;
+	padding-bottom: 10px;
+}
+.detail_news .detail_news_top h1{
+	font-size: 14px;
+	font-weight: normal;
+}
+.detail_news .detail_news_top a{
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	color: #f00;
+	margin-bottom: 10px;
+}
+.detail_news p{
+	height: 30px;
+	line-height: 30px;
+}
+.detail_news .detail_news_top p .goods_id{
+	margin: 0 20px;
+}
+.detail_news .detail_news_top p .new_p{
+	color: #f00;
+}
+
+.detail_news .detail_news_middle{
+	padding: 10px 0;
+	border-bottom: 1px #ddd solid;
+}
+.detail_news .detail_news_middle p span{
+	display: inline-block;
+	height: 22px;
+	border: 1px #ddd solid;
+	line-height: 22px;
+	margin: 0 10px;
+	padding: 0 15px;
+	cursor: pointer;
+}
+.detail_news .detail_news_middle .goods_num input{
+	height: 14px;
+	line-height: 12px;
+	width: 14px;
+}
+.detail_news .detail_news_middle .select_result{
+	margin-left: 60px;
+}
+.detail_news .detail_news_middle .shop_buy{
+	margin-top: 10px;
+	height: 40px;
+	padding: 0 40px;
+}
+.detail_news .detail_news_middle .shop_buy input{
+	width: 150px;
+	height: 40px;
+	margin: 0 10px;
+	color: #fff;
+	font-size: 16px;
+	background: #aa0;
+	border: none;
+	cursor: pointer;
+}
+.detail_news .detail_news_middle #join_car{
+	background: #a00;
+}
+.detail_news .detail_news_bottom img{
+	display: inline-block;
+}
+.detail_news .detail_news_bottom p a{
+	display: inline-block;
+	margin: 0 10px;
+}
+.detail_news .detail_news_bottom p:nth-of-type(1){
+	position: relative;
+}
+.detail_news .detail_news_bottom p:nth-of-type(1) img{
+	position: absolute;
+}
+.detail_news .detail_news_bottom p:nth-of-type(2) span{
+	margin-left: 50px;
+}
+.detail_goods_other{
+	overflow: hidden;
+	width: 800px;
+	padding: 0 100px;
+	text-align: left;
+}
+.detail_goods_other .detail_all{
+	overflow: hidden;
+	border: 1px #ccc solid;
+	background: #eee;
+	padding: 20px;
+}
+.detail_goods_other .detail_all span{
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	margin-right: 150px;
+	color: #555;
+}
+.detail_goods_other p{
+	margin: 20px auto;
+}
+.detail_goods_other p img{
+	margin: 0 auto;
+}
+.diolog{
+	position: fixed;
+	top: 300px;
+	left: 600px;
+	width: 300px;
+	height: 200px;
+	background: #fff;
+	border: 1px #ddd solid;
+	z-index: 5;
+	display: none;
+}
+.diolog span{
+	display: block;
+	font: 26px/6 "微软雅黑";
+	color: #880;
+}
+.diolog a{
+	float: left;
+	width: 100px;
+	height:43px;
+	line-height: 43px;
+	border: 1px #ddd solid;
+	background: #404;
+	color: #fff;
+	font-size: 16px;
+}
+.diolog a:nth-of-type(2){
+	float: right;
+	background: #f00;
+}

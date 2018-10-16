@@ -1,0 +1,58 @@
+.header_list .all_goods{
+	height: 20px;
+	overflow:hidden;
+}
+.sign{
+	width: 1100px;
+	overflow: hidden;
+	padding: 50px;
+	box-sizing: border-box;
+}
+.sign_l{
+	width: 400px;
+	padding-right: 50px;
+	float: left;
+	border-right: 1px #ddd dashed;
+}
+.sign_r{
+	width: 320px;
+	border-left: 1px #ddd dashed;
+	float: right;
+	text-align: left;
+	margin-right: 100px;
+	border: 1px #ddd solid;
+	box-shadow: 3px 3px 3px 2px #aaa;
+}
+.sign_r h1{
+	font:20px/2 "微软雅黑";
+	color: #888;
+	border-bottom: 1px #ddd solid;
+}
+.sign_r p{
+	height: 40px;
+	line-height: 40px;
+	margin: 10px 30px;
+}
+.sign_r p input{
+	height: 30px;
+	border: 1px #ddd solid;
+	border-radius: 5px;
+	width: 130px;
+}
+.sign_r p a{
+	color: #f00;
+}
+#check{
+	height: 12px;
+	width: 12px;
+}
+#submit{
+	height: 30px;
+	width: 130px;
+	border: 1px #ddd solid;
+	border-radius: 5px;
+	background: #e00;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}

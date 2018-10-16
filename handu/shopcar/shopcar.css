@@ -1,0 +1,185 @@
+.car_header{
+	height: 120px;
+	overflow: hidden;
+}
+.car_header a h1{
+	font-size: 50px;
+	height: 100px;
+	line-height: 100px;
+	float: left;
+	color: #f00;
+}
+.car_header a h6{
+	font-size: 18px;
+	color: #aaa;
+	float: left;
+	line-height: 140px;
+	height: 100px;
+}
+.car_header ul{
+	height: 100px;
+	line-height: 100px;
+	float: right;
+}
+.car_header ul li{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	margin: 30px 0;
+	width: 160px;
+	font-size: 16px;
+	background: #aaa;
+}
+.car_header ul li:nth-of-type(1){
+	background: #f00;
+	color: #fff;
+}
+.car_header p{
+	width: 400px;
+	height: 20px;
+	float: left;
+	text-align: left;
+	display: none;
+}
+.car_header p a{
+	color: #f00;
+}
+.car_list{overflow: hidden;
+	border: 1px #ddd solid;
+}
+.car_list h1{
+	display: block;
+	height: 30px;
+	background: #ddd;
+	line-height: 30px;
+}
+.car_list h1 span{
+	float: left;
+	height: 30px;
+	width: 148px;
+	border-left:1px #eee solid ;
+	font-size: 14px;
+	color: #555;
+}
+.car_list h1 span:nth-of-type(1){
+	width: 452px;
+	border: none;
+}
+.car_list>p{
+	height: 46px;
+	line-height: 46px;
+	text-align: left;
+}
+.car_list .car_none{
+	height: 60px;
+	padding: 30px auto;
+	display: none;
+	
+}
+.car_list .car_none h2{
+	font-size: 20px;
+}
+.car_list .car_none a{
+	color: #f00;
+	text-decoration: underline;
+	font-size: 14px;
+}
+
+.mygoods {
+	border-bottom: 1px #999 solid;
+}
+.mygoods dl{
+	height: 120px;
+	width: 1198px;
+	background: #eee;
+	padding: 10px;
+	margin: 10px 0;
+}
+.mygoods dl dt{
+	float: left;
+	width: 445px;
+	height: 120px;
+	overflow: hidden;
+	text-align: left;
+}
+.mygoods dl dt img{
+	width: 120px;
+	float: left;
+	margin-right: 20px;
+}
+.mygoods dl dt a{
+	display: block;
+	width: 300px;
+	float: right;
+	margin-top: 30px;
+	font-size: 16px;
+}
+.mygoods dl dt p{
+	width: 300px;
+	float: left;
+	margin-top: 10px;
+}
+.mygoods dl dd{
+	height: 40px;
+	width: 130px;
+	float: left;
+	padding: 40px 19px 40px 0;
+	border-left:1px #ddd solid ;
+}
+.mygoods dl input{
+	float: left;
+	width: 46px;
+	height: 26px;
+	margin: 0 3px;
+	text-align: center;
+}
+.mygoods dl .car_goods_down,.mygoods dl .car_goods_up{
+	width: 20px;
+	height: 20px;
+	margin-top: 5px;
+}
+.car_morney{
+	text-align: right;
+	border-bottom: 1px #aaa solid;
+}
+.car_morney p{
+	height: 30px;
+	line-height: 30px;
+	padding-right: 20px;
+}
+.car_morney p span{
+	display: inline-block;
+	width: 50px;
+}
+.car_all{
+	height: 40px;
+	line-height: 40px;
+	text-align: right;
+	padding-right: 20px;
+}
+.car_all span{
+	font-size: 28px;
+	color: #f00;
+}
+body>p{
+	overflow: hidden;
+}
+body>p input{
+	height: 36px;
+	width: 140px;
+	font-size: 22px;
+	line-height: 36px;
+	border: none;	
+	margin: 20px 0 30px;
+}
+body>p input:nth-of-type(1){
+	background: #ddd;
+	color: #666;
+	float: left;
+}
+body>p input:nth-of-type(2){
+	background: #f00;
+	color: #fff;
+	float: right;
+}
+
