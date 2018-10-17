@@ -1,0 +1,8 @@
+export const VIEW_LOADING='VIEW_LOADING';
+export const UPDATE_INDEX='UPDATE_INDEX';
+export const UPDATE_USER='UPDATE_USER';
+export const ADD_USER='ADD_USER';
+
+export default{
+  VIEW_LOADING,UPDATE_INDEX,UPDATE_USER,ADD_USER
+}
