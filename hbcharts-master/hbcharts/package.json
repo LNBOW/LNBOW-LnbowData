@@ -1,0 +1,41 @@
+{
+  "name": "hb-chartmanager",
+  "version": "1.1.0",
+  "description": "stock chart on echarts",
+  "main": "index.js",
+  "scripts": {
+    "build": ".\\node_modules\\.bin\\webpack --config webpack.prod.js",
+    "build:lib": ".\\node_modules\\.bin\\webpack --config webpack.components.js",
+    "build:test": ".\\node_modules\\.bin\\webpack --config webpack.dev.js",
+    "watch": ".\\node_modules\\.bin\\webpack --config webpack.dev.js --watch",
+    "start": ".\\node_modules\\.bin\\webpack-dev-server --open --config webpack.dev.js"
+  },
+  "keywords": [
+    "echarts",
+    "canvas"
+  ],
+  "author": "jason",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "axios": "^0.18.0",
+    "echarts": "^4.2.0-rc.2",
+    "lodash": "^4.17.11",
+    "urijs": "^1.19.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.5",
+    "babel-loader": "^8.0.0-beta.0",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "raw-loader": "^0.5.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}

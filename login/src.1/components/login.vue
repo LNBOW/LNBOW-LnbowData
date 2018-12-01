@@ -1,0 +1,254 @@
+<template>
+<div class="login" id="app">
+        <!-- 头部 -->
+        <header class="margin">
+            <div class="off"></div>
+            <a href="#"><img src="../assets/img/logo.png" alt=""></a>
+        </header>
+        <!-- 中部 -->
+        <main class="margin">
+            <div>
+                <p>手机号</p>
+                <!-- 步长-26px -->
+                <div class="bp">
+                <div :style = background></div>
+                </div>
+                <select class="select" @change="selectData">   
+                    <option v-for="item in countrys" v-bind:key="item.id">{{item.name}}</option>   
+                </select>
+                <div class="code">
+                    <input type="tel" class="tel txt" v-model="phone"/>
+                    <span>{{Acode}}</span>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>验证码</p>
+                    <input type="text" class="txt txt-l" v-model="validate">
+                </div>
+                <div  class="img">
+                    <img class="update" :src="img" v-on:click="changeImg" >
+                </div>
+            </div>
+            <div class="pst">
+                <p>短信验证码</p>
+                <input type="text" class="txt" v-model="phoneValidate">
+                <button class="obtain" v-on:click="getPhoneValidate" :disabled = 'isPhoneDisable'>{{validateMsg}}</button>
+            </div>
+            <p class="tips">{{tips}}</p>
+            <button class="btn" v-on:click="phonelogin" :disabled = 'isLoginDisable'>
+                登录
+            </button>
+        </main>
+        <!-- 尾部 -->
+        <footer class="margin">
+            <p>若未注册账号则直接注册登录</p>
+        </footer>
+    </div>
+</template>
+
+<script>
+import axios from 'axios'
+axios.defaults.withCredentials=true;
+export default {
+  name: 'app',
+  data () {
+    return {
+      img:'', //随机码码获取图片
+      phone:null, //手机号
+      validate:null,  //图片验证码
+      phoneValidate:null, //手机验证码
+      randomNumber:Math.floor(Math.random() * 1000000), //6位随机数
+      timeOut:60, //倒计时
+      validateMsg:"获取验证码",
+      callback:'',//跳转的页面url
+      myreg:/^[1][3,4,5,7,8][0-9]{9}$/,
+      isPhoneDisable:false,
+      isLoginDisable:false,
+      tips:'',
+      // countrys:[{id:0,name:'中国',Acode:'+86'},{id:1,name:'美国',Acode:'+1'},{id:2,name:'日本',Acode:'+81'},{id:3,name:'新加坡',Acode:'+65'}],
+      countrys:[
+              {id:0,name:'中国',Acode:'+86'},
+              {id:1,name:'中国香港',Acode:'+852'},
+              {id:2,name:'中国澳门',Acode:'+853'},
+              {id:3,name:'中国台湾',Acode:'+883'},
+              {id:4,name:'美国',Acode:'+1'},
+              {id:5,name:'加拿大',Acode:'+1'},
+              {id:6,name:'马来西亚',Acode:'+60'},
+              {id:7,name:'澳洲',Acode:'+61'},
+              {id:8,name:'日本',Acode:'+81'},
+              {id:9,name:'韩国',Acode:'+82'},
+              {id:10,name:'新加坡',Acode:'+65'},
+              {id:11,name:'印度',Acode:'+91'},
+              {id:12,name:'泰国',Acode:'+66'},
+              {id:13,name:'德国',Acode:'+49'},
+              {id:14,name:'英国',Acode:'+44'},
+              {id:15,name:'法国',Acode:'+33'},
+              {id:16,name:'俄罗斯',Acode:'+7'},
+              {id:17,name:'巴西',Acode:'+55'},
+              {id:18,name:'印尼',Acode:'+62'},
+              {id:19,name:'柬埔寨',Acode:'+855'},
+              {id:20,name:'缅甸',Acode:'+95'},
+              {id:21,name:'文莱',Acode:'+673'},
+              {id:22,name:'菲律宾',Acode:'+63'},
+              {id:23,name:'越南',Acode:'+84'},
+              {id:24,name:'老挝',Acode:'+856'},
+              {id:25,name:'西班牙',Acode:'+34'},
+              {id:26,name:'新西兰',Acode:'+64'},
+              {id:27,name:'意大利',Acode:'+39'},
+              ],
+      Acode:'+86',
+      speed:-21,
+      background:'background-position:3px '+ 5 +'px',
+    }
+  },
+  computed:{
+   
+  },
+  methods:{
+     selectData:function(ele){
+      this.Acode = this.countrys[ele.target.selectedIndex].Acode;
+      this.background='background-position:3px '+ (5 - ele.target.selectedIndex * 26) +'px';    
+    },
+    //设置cookie
+    setCookie:function (cname, cvalue, exdays,cpath,cdomain) { 
+      let d = new Date(); 
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); 
+      let expires = "expires=" + d.toUTCString(); 
+      document.cookie = cname + "=" + cvalue + "; " + expires + ";path=" + cpath + ";domain=" +cdomain;
+    },
+    //获取cookie
+      getCookie:function(name){
+          name = name + "="
+          var start = document.cookie.indexOf(name),
+              value = null;
+          if(start>-1){
+              var end = document.cookie.indexOf(";",start);
+              if(end == -1){
+                  end = document.cookie.length;
+              }
+              value = document.cookie.substring(start+name.length,end);
+          }
+          return value;
+      },
+    changeImg:function(){
+      this.randomNumber = Math.floor(Math.random() * 1000000);
+      this.img = "https://nujump.tigerobo.com/VCI/VC.ashx?uid="+ this.randomNumber;
+      this.validate = null
+    },
+    // 获取手机验证码
+     getPhoneValidate:function(event){
+       let _this = this
+        if (!_this.myreg.test(_this.phone)) {
+            _this.tips = '您输入的手机号有误'
+        } else {
+          if(_this.validate == null || _this.validate == ''){
+            _this.tips = '请输入验证码'
+          }else{
+            _this.isPhoneDisable = true
+            axios({
+              url:'/api/SendConfirmationCode',//接口
+              method:'post',//发送方式
+              data:{  
+                mobile:_this.Acode + '|' + _this.phone,//手机号
+                code:_this.validate,//图片验证码
+                identityCode:_this.randomNumber//随机数
+              }
+            }).then(function (response){  //成功回调
+              _this.isPhoneDisable = false
+              if(response.data.code == 0){
+               let timerInterval = setInterval(()=>{//发送短信验证码倒计时点击失效
+                  _this.timeOut--
+                  _this.validateMsg = parseInt(_this.timeOut) + 's之后重发' 
+                  if(_this.timeOut <= 0){
+                    _this.validateMsg = '获取验证码'
+                    _this.timeOut = 60
+                    clearInterval(timerInterval)
+                  }
+                },1000)
+              }else{
+                _this.tips = response.data.message
+                _this.changeImg();
+              }
+            })
+          }
+        }
+    },
+    //登陆验证
+    phonelogin:function(event){
+      if (!this.myreg.test(this.phone)) {
+            this.tips = '您输入的手机号有误'
+        } else{
+            if(this.validate == null || this.validate == ''){
+                this.tips = '请输入验证码'
+              }else if(this.phoneValidate == null || this.phoneValidate == ''){
+                this.tips = '请输入短信验证码'
+              }else{
+                this.isLoginDisable = true;
+                axios({
+                  url:'/api/passport/Login',//接口
+                  method:'post',//发送方式 
+                  data:{  
+                    mobile:this.Acode + '|' + this.phone,//手机号
+                    confirmCode:this.phoneValidate//手机验证码
+                  }
+                }).then(function (response){  //成功回调
+                  if(response.data.code == 0){
+                    //设置cookie
+                  this.setCookie('mobile',response.data.data.mobile,15,"/","tigerobo.com")  
+                  this.setCookie('token',response.data.data.token,15,"/","tigerobo.com")
+                  this.setCookie('userId',response.data.data.userId,15,"/","tigerobo.com")
+
+                  //设置localstorage
+                  window.localStorage.setItem('mobile',response.data.data.mobile);
+                  window.localStorage.setItem('token',response.data.data.token);
+                  window.localStorage.setItem('userId',response.data.data.userId);
+                  window.location.href = this.callback? 'https://' +  this.callback : 'http://www.tigerobo.com';//跳转callbackurl
+
+                  }else if(response.data.code != 0){
+                    this.tips = response.data.message
+                    this.phoneValidate = null
+                    this.isLoginDisable = false
+                  }
+                }.bind(this))
+              }
+        }
+    }
+  },
+  mounted() {
+      this.changeImg()
+      this.callback = this.$route.query.callbackurl;
+      this.setCookie('userId',"response.data.data.userId",15,"/","tigerobo.com")
+      // if(this.getCookie("token")){//判断token是否存在
+      //   window.location.href = this.callback? 'https://' +  this.callback : 'http://www.tigerobo.com';//跳转callbackurl
+      // }
+  }
+}
+</script>
+
+<style>
+body{width: 375px;margin: 0 auto}
+.login{margin: 0 2px 0 3px}
+.margin{width: 375px;}
+p{font-size: 14px;color: #a9a9a9;margin: 0;margin-top: 12px;text-align: left}
+header{text-align: center}
+header .off{margin:12px 0}
+header img{width: 200px;height: 37px;}
+main{margin-top: 48px;margin-bottom:24px;position: relative}
+main .code{position: relative;}
+main span{float: left;position: absolute;top: 8px;left: 0;}
+main select{height: 24px;position: absolute;top: -5px;left: 90px;outline: none; }
+main div{height: 62px;}
+main .txt{outline: none;border-top:0;border-left:0;border-right: 0;height: 24px;width: 372px;font-size: 16px;padding: 2px;color: #2c3e50;}
+main .tel{text-indent: 65px;padding-top: 5px}
+main .txt-l{width: 268px;float: left;}
+main .img{width: 101px;height: 34px;float: right;margin-top: -53px;cursor: pointer}
+main .btn{border:0;background: #1478F0;width: 372px;height: 52px;text-align:center;font: 18px/52px '';color: #fff;border-radius: 5px;margin-top:24px;cursor: pointer;line-height: 52px}
+main .pst{position: relative;}
+main .tips{padding: 0;margin: 0;color: red}
+main .pst .obtain{border: none;font-size: 14px;position: absolute;right: 0;bottom: 21px;color: #1478F0;background-color: #fff;outline: none;cursor: pointer;}
+footer{text-align:center}
+footer p{font-size: 13px;text-align: center}
+.bp{width: 21px;height: 22px;overflow: hidden;position: absolute;top: -5px;left: 67px;border: 1px solid #aaaaaa;}
+.bp div{float: left;width: 21px;height: 22px;background: url(../assets/img/countrys.png) no-repeat;}
+</style>
