@@ -1,0 +1,24 @@
+/* pages/about/about.wxss */
+.aboutme{
+  font-size: 28rpx;
+  line-height: 34rpx;
+  text-indent: 56rpx;
+  text-align: left;
+}
+.erweima{
+  height: 192px;
+  width: 192px;
+  float: left;
+  margin: 6px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+.map{
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}

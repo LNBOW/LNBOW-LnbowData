@@ -1,0 +1,13 @@
+<!--pages/imags/game.wxml-->
+<image src='../../imags/game/1.jpg'></image>
+<image src='../../imags/game/2.jpg'></image>
+<image src='../../imags/game/3.jpg'></image>
+<image src='../../imags/game/5.jpg'></image>
+<image src='../../imags/game/6.jpg'></image>
+<image src='../../imags/game/7.jpg'></image>
+<image src='../../imags/game/8.jpg'></image>
+<image src='../../imags/game/9.jpg'></image>
+<image src='../../imags/game/10.jpg'></image>
+<image src='../../imags/game/11.jpg'></image>
+<image src='../../imags/game/13.jpg'></image>
+

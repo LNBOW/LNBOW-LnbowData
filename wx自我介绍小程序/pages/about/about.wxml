@@ -1,0 +1,7 @@
+<!--pages/about/about.wxml-->
+  <view class='aboutme'>我叫龙宝，是一名前端开发小喽啰，对，就是程序员，每天朝10晚7撸代码，下班之后玩游戏，和几个基友住在一起。现实中是一条没有梦想的小咸鱼，平凡普通；游戏中是一个纵横阿拉德的所谓大佬，也是平凡普通。不知道自己的梦想是什么，能做自己喜欢的事就行，做一个善良的人儿，希望家人朋友都健健康康的。耶。
+  </view>
+<view>
+  <image class='erweima' src='../../imags/erweima/erweima.png'></image>
+</view>
+  <view><map class='map' longitude="121.434363" latitude="31.219909"></map></view>

@@ -1,0 +1,5 @@
+<!--pages/imags/imags.wxml-->
+<view class='images'>
+  <image src='../../imags/images/1.jpg'></image>
+  <image src='../../imags/images/2.jpg'></image>
+</view>

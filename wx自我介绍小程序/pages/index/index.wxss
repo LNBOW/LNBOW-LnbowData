@@ -1,0 +1,66 @@
+/**index.wxss**/
+.header{
+  border-bottom: 1rpx solid #aaa;
+  overflow: hidden;
+  padding: 0 0 10rpx;
+  display: flex;
+}
+.userinfo {
+  width: 68rpx;
+  height: 68rpx;
+  float: left;
+}
+.nName{
+  display: inline-block;
+  margin: 0 auto;
+  color:brown;
+  line-height: 68rpx;
+}
+.userinfo-avatar {
+  width: 68rpx;
+  height: 68rpx;
+  margin: 10rpx 0 0 20rpx;
+  border-radius: 50%;
+}
+.scanCode{
+  width: 68rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 30rpx;
+  padding: 0;
+  margin: 10rpx 20rpx 0 0;
+  border-radius: 50%;
+  float: right;
+  border: 1rpx solid #aaa;
+}
+.scroll-view-y { 
+ height: 560rpx; 
+ width: 100%;
+
+}
+.scroll-y-item { 
+ height: 280rpx; 
+ box-sizing: border-box;
+ width: 100%; 
+   display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+.scroll-y-item .indexaudio{
+  margin: 26px auto;
+}
+.bg_green{
+  background: #8fa;
+}
+.bg_red{
+  background: #f8a;
+}
+.bg_gray{
+  background: #fff;
+}
+.bg_yellow{
+  background: #ee8
+}
+.bg_blue{
+  background: #8ef
+}

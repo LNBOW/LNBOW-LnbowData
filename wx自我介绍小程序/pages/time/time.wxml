@@ -1,0 +1,7 @@
+<!--pages/time/time.wxml-->
+<view class='timelists'>
+  <view class='timeli' wx:for='{{lists}}' wx:key='{{item.id}}'>
+    <view class='timedate'>{{item.date}}</view>
+    <view class='timecont'>{{item.cont}}</view>
+  </view>
+</view>

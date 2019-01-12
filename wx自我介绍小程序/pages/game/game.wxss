@@ -1,0 +1,9 @@
+/* pages/game/game.wxss */
+image{
+  width: 272px;
+  float: left;
+  margin: 6px 24px;
+    display: flex;
+  align-items: center;
+  justify-content: center; 
+}

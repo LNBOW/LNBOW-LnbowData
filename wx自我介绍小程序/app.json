@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/about/about",
+    "pages/imags/imags",
+    "pages/game/game",
+    "pages/time/time"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#0096ff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./imags/icons/shouye.png",
+        "selectedIconPath": "./imags/icons/shouyecopy.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "imags/icons/wode.png",
+        "selectedIconPath": "imags/icons/wode_1.png",
+        "text": "关于我"
+      },
+      {
+        "pagePath": "pages/imags/imags",
+        "iconPath": "imags/icons/tupian.png",
+        "selectedIconPath": "imags/icons/tupian_1.png",
+        "text": "图片集"
+      },
+      {
+        "pagePath": "pages/game/game",
+        "iconPath": "imags/icons/youxi.png",
+        "selectedIconPath": "imags/icons/youxi_1.png",
+        "text": "游戏"
+      },
+      {
+        "pagePath": "pages/time/time",
+        "iconPath": "imags/icons/shijianzhou.png",
+        "selectedIconPath": "imags/icons/liebiao.png",
+        "text": "时间轴"
+      }
+    ]
+  }
+}
